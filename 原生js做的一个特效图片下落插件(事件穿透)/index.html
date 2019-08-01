@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="text/javascript" src="./js/EffectItem.js"></script>
+    <script type="text/javascript" src="./js/Effect.js"></script>
+    <script type="text/javascript">
+         new Effect({
+        //特效图片，多张图片时传入数组，单个图片时传入字符串
+        effectUrl : ["./images/xue.png","./images/xin.png","./images/a1.png","./images/a2.png","./images/a3.png","./images/a4.png"],
+        //特效旋转，1/true为旋转，0/false为不旋转
+        rotate : 1,
+        //特效方向，left/right/up/down
+        direction : "up"
+    });
+    </script>
+</body>
+</html>

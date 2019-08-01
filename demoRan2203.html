@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<style type="text/css">
+li{
+    list-style:none;  去掉列表前面图形
+}
+li a{
+    color:#123;    设置一级菜单文本颜色
+}
+#menu ul{
+    display:none;  设置二级菜单默认不显示
+}
+#menu>li:hover ul{
+    display:block;       鼠标滑过一级菜单时，显示二级菜单
+}
+</style>
+
+
+<style type="text/css">
+li{
+    list-style:none;  去掉列表前面图形
+}
+li a{
+    color:#123;    设置一级菜单文本颜色
+}
+#menu>li,#menu>li>a,#menu>li>ul{
+    float:left;             一级菜单，二级菜单左移动
+}
+#menu>li>a{
+    display:block;
+    background-color;red;    
+}
+#menu>li:hover ul{
+    display:block;
+}
+#menu>ul{
+     dispaly:none;
+     width:100px；
+     background-color:#123 ;
+     padding-top:20px;
+}
+</style>
+
+</head>
+
+<body>
+  <ul id="menu">
+          <li>   
+                 <a href="#">一级菜单1</a>
+                 <ul>
+                        <li>二级菜单1-1</li>
+                        <li>二级菜单1-2</li>
+                        <li>二级菜单1-3</li>
+                 </ul>       
+          </li>
+          
+          <li>    
+                  <a href="#">一级菜单2</a>
+                  <ul>
+                        <li>二级菜单2-1</li>
+                        <li>二级菜单2-2</li>
+                        <li>二级菜单2-3</li>
+                  </ul>   
+          </li>
+          
+          <li>
+                  <a href="#">一级菜单3</a>
+                  <ul>
+                        <li>二级菜单3-1</li>
+                        <li>二级菜单3-2</li>
+                        <li>二级菜单3-3</li>
+                  </ul> 
+          </li>
+          
+          <li>
+                  <a href="#">一级菜单4</a>
+                  <ul>
+                        <li>二级菜单4-1</li>
+                        <li>二级菜单4-2</li>
+                        <li>二级菜单4-3</li>
+                  </ul> 
+          </li>
+  <ul>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>左程文</title> 
+</head>
+<body>
+
+<div style="text-align: center">
+<canvas id="myCanvas" width="800" height="400" style="border:1px solid #d3d3d3;">
+您的浏览器不支持 HTML5 canvas 标签。</canvas>
+</div>
+<script>
+
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.beginPath();
+
+console.info(444);
+	var xxx = 200, yyy=10;
+	var hz = 30;
+	var timeOut = 8000;
+	var timeLimit = timeOut/hz ;
+	console.info(timeLimit);
+	var counter = 0;
+	
+	var color = '';
+	
+	
+	ctx.arc(xxx,yyy,40,0,2*Math.PI);
+	ctx.strokeStyle="red";
+	ctx.stroke();
+	kkkkkkk = setInterval(function(){
+				
+	tin = ctx.moveTo(100,400);
+	ctx.lineTo( --xxx*8*Math.PI, --yyy*8*Math.PI);
+	
+	ctx.strokeStyle="#"+parseInt(Math.random()*1000);
+	ctx.stroke();
+		
+	counter++;
+	if( counter >= timeLimit ){
+		//counter = 0;
+		clearInterval(kkkkkkk);
+		console.info("stop drawing");
+	}else{
+		console.info(counter);
+	}
+				},hz);
+</script> 
+
+</body>
+</html>

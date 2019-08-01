@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>淡入的顺序执行</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".btn1").click(function(){
+		var speedR = $(".dig001").val();
+		if( isNaN($.trim(speedR)) ){
+			alert("请输入数字");
+			return;
+		}
+		$(".btn1")[0].disabled = true;
+		// 递归执行
+		diguiFade( $(".p1"), speedR*1000, 0 );
+	});
+});
+
+// 使用递归
+function diguiFade( Elarr, timeoutInt, n ){
+	var setTime = timeoutInt || 1000;
+	var xxx = Elarr.length;
+	if( n < xxx ){
+		$(Elarr[n]).slideToggle(setTime);
+		setTimeout(function(){
+		diguiFade( Elarr, setTime, ++n );
+		}, (setTime-200)>0?setTime-200:setTime ); // 提前执行下一个动画200毫秒以呈现顺滑的效果
+	}else{
+		console.info(n);
+		$(".btn1")[0].disabled = false;
+	}
+}
+  
+</script>
+
+
+<style type="text/css">
+.p1{
+	display:none
+}
+</style>
+</head>
+<body>
+<button class="btn1">Toggle</button>
+ <br/> 动画速度(秒)<input class="dig001" title="RRR" value="0.5"/>
+	
+<p class="p1">《Attila》</p>
+<p class="p1">A promised land which is always the next one</p>
+<p class="p1">A heroic feat that no one else has ever done</p>
+<p class="p1">An evil empire found on nothing but my troopers' horseshoes</p>
+<p class="p1">An oriental last name carried on from father to son</p>
+
+<p class="p1">Say I'm the conqueror who long for flesh and blood</p>
+<p class="p1">A servile Europe could not fulfill my lust</p>
+<p class="p1">My footsteps follow the will of history</p>
+<p class="p1">Till the day ashes turn ashes and dust to dust</p>
+
+<p class="p1">No one calls me by my real name</p>
+<p class="p1">The scourge of god was the title they gave</p>
+<p class="p1">Nonetheless I feel so innocent I'm not the one to be blamed</p>
+<p class="p1">It's just the way it meant to be over and over again</p>
+
+<p class="p1">It's been a while since the day I left home</p>
+<p class="p1">On the long journey to the west we are left all alone</p>
+<p class="p1">I could return to her arms but somehow I won't</p>
+<p class="p1">Like a lost child with a heart of stone</p>
+
+<p class="p1">Attila</p>
+<p class="p1">Homeless Attila</p>
+<p class="p1">Attila</p>
+<p class="p1">Nomad Attila</p>
+
+<p class="p1">
+<img class="index-logo-src" src="data:image/png;base64,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"
+alt="到百度首页" title="到百度首页"> 
+</p>
+
+</body>
+</html>
